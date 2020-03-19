@@ -1,8 +1,29 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background-color: green;
+      }
+
+      div {
+        background-color: slateblue;
+        border: black solid 5px;
+        margin: 20%;
+        text-align: center;
+        font-size: 2em;
+        padding: 5%;
+      }
+    </style>
+  </head>
   <body>
-    <p>
-      The secret number is <%= random %>
-    </p>
+    <div>
+        <h1>Go Ahead, Guess A Number!</h1>
+        <form>
+          <input type='text' name='guess' />
+          <input type='submit' value='Guess!' />
+        </form>
+        <p><%= message %></p>
+        <p>You have <%= guesses_left %> guesses left!</p>
+      </div>
   </body>
 </html>
