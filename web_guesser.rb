@@ -5,14 +5,14 @@ def new_game
   @@guesses_left = 6
   @@random = make_random
   @@guess = ""
+  @@color = 'background-color: black'
 end
-  
+
 def make_random
   rand(1..100)
 end
 
 def get_input
-  @@guess = params["guess"]
   if @@guess == ""
     @@message = "Guess a number from 1 -100"
   else
@@ -53,6 +53,7 @@ end
 new_game
 
 get '/' do 
+  @@guess = params["guess"]
   get_input
   erb :index, :locals => {
     :message => @@message, 
